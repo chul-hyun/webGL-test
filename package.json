@@ -1,0 +1,28 @@
+{
+  "name": "webGL",
+  "version": "0.0.0",
+  "description": "",
+  "main": "base.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "binderjs": "0.0.0",
+    "jquery": "^2.1.1",
+    "lodash": "^2.4.1",
+    "require-css": "guybedford/require-css",
+    "requirejs": "^2.1.15",
+    "webGL": "git://github.com/qkrcjfgus33/webGL"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsdoc": "^0.5.7",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^0.6.0",
+    "jaguarjs-jsdoc": "davidshimjs/jaguarjs-jsdoc"
+  }
+}

@@ -1,0 +1,14 @@
+#world{
+	border: 1px solid black;
+	margin: 10px auto;
+	display: block;
+}
+
+.control_box{
+	text-align: center;
+}
+
+body{
+	margin: 30px auto;
+	width: 1000px;
+}
