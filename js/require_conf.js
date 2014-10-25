@@ -5,7 +5,8 @@ require.config({
         'jquery' : '../node_modules/jquery/dist/jquery',
         'lodash' : '../node_modules/lodash/dist/lodash.min',
         'binder' : '../node_modules/binderjs/dist/binder.min',
-        'webGL'  : '../node_modules/webGL/dist/webGL'
+        'Nested' : '../node_modules/nested-observe/dist/nested-observe.min',
+        'WebGL'  : '../node_modules/WebGL/dist/WebGL'
     },
     map: {
       '*': {
@@ -16,8 +17,14 @@ require.config({
 
 require(['css!../main.css']);
 
-require(['jquery', 'webGL'], function($, webGL){
-    console.log($);
-    var wg = new webGL($('#world')[0]);
-    wg.MidPointLine(10, 10, 100, 100);
+require(['jquery', 'ModeState'], function($, ModeState){
+    var canvas = $('#world')[0];
+    var mode   = $('#mode')[0];
+    var reset  = $('#reset')[0];
+
+    var mode_state = new ModeState(canvas, mode, reset);
+    test = function test(){
+        console.log(mode_state.type);
+    }
+    
 });
