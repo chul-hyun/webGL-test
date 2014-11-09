@@ -12,3 +12,20 @@ body{
 	margin: 30px auto;
 	width: 1000px;
 }
+
+/*
+canvas { 
+	-ms-transform:matrix3d(	1, 0, 0, 0, 
+	                             			0, -1, 0, 0, 
+	                            			 0, 0, -1, 0, 
+	                            			 0, 0, 0, 1);
+	-webkit-transform: matrix3d(	1, 0, 0, 0, 
+	                             				0, -1, 0, 0, 
+	                             				0, 0, -1, 0, 
+	                             				0, 0, 0, 1);
+	 transform: matrix3d(	1, 0, 0, 0, 
+	                            		 0, -1, 0, 0, 
+	                            		 0, 0, -1, 0, 
+	                             		0, 0, 0, 1); 
+}
+*/
