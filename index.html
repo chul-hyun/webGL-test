@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>DDA</title>
+</head>
+<body>
+	<div class="control_box">
+		<select id="mode">
+			<option value="DDALine">DDALine</option>
+			<option value="BHLine">BHLine</option>
+			<option value="midPointLine">midPointLine</option>
+			<option value="midPointCircle">midPointCircle</option>
+			<option value="midPointCircleSolid">midPointCircleSolid</option>
+			<option value="midPointEllipse">midPointEllipse</option>
+			<option value="midPointEllipseSolid">midPointEllipseSolid</option>
+			<option value="lineGraph">lineGraph</option>
+			<option value="pieChart">pieChart</option>
+			<option value="limacon">limacon</option>
+			<option value="cardioid">cardioid</option>
+			<option value="threeLeaf">threeLeaf</option>
+			<option value="fourLeaf">fourLeaf</option>
+			<option value="spiral">spiral</option>
+		</select>
+		<input type="button" value="reset" id="reset">
+		<input type="color" id="canvas_color">
+	</div>
+
+	<canvas id = "world" width = "800px" height = "800px"></canvas>
+
+	<script data-main="js/require_conf" src="node_modules/requirejs/require.js"></script>
+</body>
+</html>

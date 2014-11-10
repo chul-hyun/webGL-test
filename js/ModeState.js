@@ -33,10 +33,12 @@ define(['jquery', 'binder', 'WebGL', 'lodash', 'module/distance', 'module/lineGr
 		$(mode).on('change', function(){
 			that.type = this.value;
 			if( this.value === 'lineGraph' ){
+				local_wg.clear();
 				lineGraph(local_wg, sample_data1.values, sample_data1.names, 100, 200, 50, 1)
 				world_wg.update();
 			}
 			else if( this.value === 'pieChart' ){
+				local_wg.clear();
 				pieChart(local_wg, 400, 400, 200, sample_data2.values)
 				world_wg.update();
 			}
@@ -47,6 +49,7 @@ define(['jquery', 'binder', 'WebGL', 'lodash', 'module/distance', 'module/lineGr
 			        this.value === 'fourLeaf'  ||
 			        this.value === 'spiral'
 			        ){
+				local_wg.clear();
 				drawCurve(local_wg, this.value )
 				world_wg.update();
 			}
