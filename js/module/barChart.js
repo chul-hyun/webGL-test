@@ -10,7 +10,6 @@ define(['lodash'],function(_){
 
 		_.forIn(values, function(value){
 			draw_y = bar_start_y + gap_y * value;
-			draw_x = draw_x;
 			
 			for( i = 1 ; i < half_width ; i ++){
 				wg.BHLine(draw_x - i, bar_start_y, draw_x - i, draw_y);

@@ -16,8 +16,8 @@ define([], function(){
 			case 'cardioid' 		: start_x += a + a; 	break;
 			case 'threeLeaf' 	: start_x += a; 		break;
 			case 'fourLeaf' 		: start_x += a; 		break;
-			case 'spiral' 		:  					break;
-			default 			:  					break;
+			case 'spiral' 			:  								break;
+			default 						:  								break;
 		}
 
 		theta = dtheta;
@@ -27,12 +27,12 @@ define([], function(){
 				case 'cardioid' 		: r = a * ( 1 + Math.cos(theta) ); 	break;
 				case 'threeLeaf' 	: r = a * Math.cos(3 * theta) ; 		break;
 				case 'fourLeaf' 		: r = a * Math.cos(2 * theta) ; 		break;
-				case 'spiral' 		: r = (a  / 4) * theta; 				break;
-				default 			: 									break;
+				case 'spiral' 			: r = (a  / 4) * theta; 						break;
+				default 						: 																break;
 			}
 
 			end_x = x0 + r * Math.cos(theta);
-			end_y = x0 + r * Math.sin(theta);
+			end_y = y0 + r * Math.sin(theta);
 			wg.BHLine(start_x, start_y, end_x, end_y);
 
 			start_x = end_x;
