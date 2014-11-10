@@ -1,6 +1,7 @@
 define(['lodash'],function(_){
 	function lineGraph(wg, values, names, start_x, start_y, gap_x, gap_y){
 		var draw_x, draw_y, pre_x, pre_y;
+		var user_color = wg.ctx.fillStyle;
 
 		draw_x = start_x;
 		draw_y	= start_y;
@@ -8,8 +9,10 @@ define(['lodash'],function(_){
 		_.forIn(values, function(value){
 			draw_y = start_y + gap_y * value;
 			
+			wg.ctx.fillStyle = '#ff0000'; //red color
 			drawStar(wg, draw_x, draw_y, 3);
 			if( pre_x !== undefined && pre_y !== undefined ){
+				wg.ctx.fillStyle = user_color;
 				wg.BHLine(pre_x, pre_y, draw_x, draw_y);
 			}
 			pre_x = draw_x;
@@ -20,12 +23,16 @@ define(['lodash'],function(_){
 
 		draw_x = start_x;
 		draw_y	= start_y;
+		wg.ctx.fillStyle = '#000000'; //black color
+		wg.ctx.textAlign="center"; 
+		wg.ctx.font='bold 15px Arial';
 		_.forIn(names, function(name){
-			// -6은 텍스트를 중앙에 정렬하기 위한 하드코딩.
-			wg.ctx.fillText(name,draw_x - 6, wg.height - draw_y );
+			wg.ctx.fillText(name,draw_x, wg.height - draw_y );
 			
 			draw_x += gap_x;
 		});
+
+		wg.ctx.fillStyle = user_color; //restore color
 	}
 
 	function drawStar(wg, x, y, length){

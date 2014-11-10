@@ -1,7 +1,7 @@
 /* jshint unused: false */
 
-define(['jquery', 'binder', 'WebGL', 'lodash', 'module/distance', 'module/lineGraph', 'module/pieChart', 'module/drawCurve', 'model/sample_data1', 'model/sample_data2'], 
-	function($, binder, WebGL, _, distance, lineGraph, pieChart, drawCurve, sample_data1, sample_data2){
+define(['jquery', 'binder', 'WebGL', 'lodash', 'module/distance', 'module/lineGraph', 'module/pieChart', 'module/drawCurve', 'module/barChart', 'model/sample_data1', 'model/sample_data2'], 
+	function($, binder, WebGL, _, distance, lineGraph, pieChart, drawCurve, barChart, sample_data1, sample_data2){
 	
 	return binder(function(canvas, mode, reset){
 		var world_wg = new WebGL(canvas);
@@ -34,12 +34,17 @@ define(['jquery', 'binder', 'WebGL', 'lodash', 'module/distance', 'module/lineGr
 			that.type = this.value;
 			if( this.value === 'lineGraph' ){
 				local_wg.clear();
-				lineGraph(local_wg, sample_data1.values, sample_data1.names, 100, 200, 50, 1)
+				lineGraph(local_wg, sample_data1.values, sample_data1.names, 100, 100, 50, 1);
 				world_wg.update();
 			}
 			else if( this.value === 'pieChart' ){
 				local_wg.clear();
-				pieChart(local_wg, 400, 400, 200, sample_data2.values)
+				pieChart(local_wg, 400, 400, 200, sample_data2.values);
+				world_wg.update();
+			}
+			else if( this.value === 'barChart' ){
+				local_wg.clear();
+				barChart(local_wg, sample_data1.values, sample_data1.names, 100, 100, 50, 1, 10);
 				world_wg.update();
 			}
 			else if( 
