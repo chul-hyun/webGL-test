@@ -4,8 +4,7 @@ define(['lodash'],function(_){
 
 		draw_x = start_x;
 		draw_y	= start_y;
-		pre_x;
-		pre_y;
+		
 		_.forIn(values, function(value){
 			draw_y = start_y + gap_y * value;
 			
